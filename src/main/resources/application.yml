@@ -1,4 +1,5 @@
 #配置端口
-spring:
-  profiles:
-    active: test
+server:
+  port: 9000
+  servlet:
+    context-path: /jenkins
