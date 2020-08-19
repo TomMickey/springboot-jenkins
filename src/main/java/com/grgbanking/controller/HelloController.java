@@ -34,6 +34,7 @@ public class HelloController {
         String[] activeProfiles = webApplicationConnect.getEnvironment().getActiveProfiles();
         logger.info("输出配置文件名称:----> {}", activeProfiles);
         logger.info("{}",user);
+        logger.info("自动化部署");
         return "Hello World!";
     }
 
