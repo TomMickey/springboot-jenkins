@@ -1,4 +1,5 @@
 package com.grgbanking.controller;
+import com.grgbanking.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class HelloController {
     //日志输出
     private static Logger logger = LoggerFactory.getLogger(HelloController.class);
 
+    @Autowired
+    private User user;
+
     @RequestMapping("/hello")
     public String hello(){
         return "Hello";
@@ -29,6 +33,7 @@ public class HelloController {
         logger.info("输出url:---> {}", request.getRequestURL());
         String[] activeProfiles = webApplicationConnect.getEnvironment().getActiveProfiles();
         logger.info("输出配置文件名称:----> {}", activeProfiles);
+        logger.info("{}",user);
         return "Hello World!";
     }
 
